@@ -38,5 +38,15 @@ public class ReadStateFile {
         String[] array = new String[4];
         double balance;
         double total = 0;
+        try{
+            BasicFileAttributes attr = Files.readAttributes
+            (file, BasicFileAttributes.class);
+            System.out.println("\nAttributes of the file:");
+            System.out.println("Creation time "+attr.creationTime());
+            System.out.println("Size "+attr.size());
+        }catch(IOException e){
+            System.out.println("Message: "+e);
+        }
+        
     }
 }
